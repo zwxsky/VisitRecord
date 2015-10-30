@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="demo.example.zwx.visitrecord.ReleaseVisitActivity">
+
+    <TextView android:text="@string/needVisit" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
+        android:id="@+id/needVisit" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:id="@+id/nameText"
+        android:layout_below="@+id/needVisit"
+        android:textSize="25dp"
+        android:layout_marginTop="72dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入姓名"
+        android:id="@+id/name"
+        android:layout_alignTop="@+id/nameText"
+        android:layout_alignLeft="@+id/needVisit"
+        android:layout_alignStart="@+id/needVisit" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reason"
+        android:id="@+id/reasonText"
+        android:layout_below="@+id/nameText"
+        android:textSize="25dp"
+        android:layout_marginTop="72dp" />
+
+    <EditText
+        android:id="@+id/reason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="周一好久不见"
+        android:layout_alignTop="@+id/reasonText"
+        android:layout_alignLeft="@+id/name"
+        android:layout_alignStart="@+id/name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/deadline"
+        android:id="@+id/deadlineView"
+        android:layout_below="@+id/reasonText"
+        android:textSize="25dp"
+        android:layout_marginTop="72dp" />
+
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:textSize="25dp"
+        android:layout_marginTop="30dp"
+        android:entries="@array/assigners"
+        android:layout_below="@+id/deadlineView"
+        android:layout_alignLeft="@+id/deadlineView"
+        android:layout_alignRight="@+id/deadlineView" />
+
+
+    <!--<CalendarView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/calendarView"
+        android:layout_alignTop="@+id/deadlineView"
+        android:layout_centerHorizontal="true" />-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="release"
+        android:layout_below="@id/spinner"
+        android:id="@+id/release"
+        android:onClick="release"/>
+
+
+</RelativeLayout>

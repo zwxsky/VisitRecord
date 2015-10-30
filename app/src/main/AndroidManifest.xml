@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="demo.example.zwx.visitrecord" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PreviewActivity"
+            android:label="@string/title_activity_preview" >
+        </activity>
+        <activity
+            android:name=".AddRecordActivity"
+            android:label="@string/title_activity_add_record" >
+        </activity>
+        <activity
+            android:name=".ReleaseVisitActivity"
+            android:label="@string/title_activity_release_visit" >
+        </activity>
+        <activity
+            android:name=".LastRecordActivity"
+            android:label="@string/title_activity_last_record" >
+        </activity>
+        <activity
+            android:name=".LastNeedActivity"
+            android:label="@string/title_activity_last_need" >
+        </activity>
+        <activity
+            android:name=".ListDisplay"
+            android:label="@string/title_activity_last_need" >
+        </activity>
+    </application>
+
+</manifest>
