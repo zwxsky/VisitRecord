@@ -17,6 +17,7 @@ public class PreviewActivity extends ActionBarActivity {
         setContentView(R.layout.activity_preview);
 
         Button button = (Button)findViewById(R.id.sendNeed);
+
         /*button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,4 +60,7 @@ public class PreviewActivity extends ActionBarActivity {
     public void showLastNeed(View view){
         startActivity(new Intent(this,LastNeedActivity.class));
     }
+
+
+
 }

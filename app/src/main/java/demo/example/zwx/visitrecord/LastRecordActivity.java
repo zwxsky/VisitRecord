@@ -45,7 +45,5 @@ public class LastRecordActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void addRecord(View view){
-        startActivity(new Intent(this,AddRecordActivity.class));
-    }
+
 }

@@ -13,6 +13,7 @@
     <string name="needVisit">需要探访</string>
     <string name="visitRecord">探访记录</string>
     <string name="name">姓名</string>
+    <string name="address">住址</string>
 
     <string name="reason">原由</string>
     <string name="deadline">截至时间</string>
@@ -21,7 +22,11 @@
     <string name="interviewee">受访者</string>
     <string name="situation">情况</string>
     <string name="date">探访时间</string>
+    <string name="isAccepted">已领取</string>
+    <string name="waitVisited">待探望</string>
+    <string name="releaseNeed">发布需要</string>
     <string name="sumbit">提交</string>
+
     <string-array name="assigners">
         <item>不指派</item>
         <item>philip</item>
@@ -30,5 +35,6 @@
     </string-array>
     <string name="title_activity_last_record">LastRecordActivity</string>
     <string name="title_activity_last_need">LastNeedActivity</string>
+    <string name="title_activity_marquee">MarqueeActivity</string>
 
 </resources>

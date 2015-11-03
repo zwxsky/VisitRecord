@@ -81,10 +81,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="release"
+        android:text="@string/releaseNeed"
         android:layout_below="@id/spinner"
         android:id="@+id/release"
-        android:onClick="release"/>
+        android:onClick="releaseNeed"/>
 
 
 </RelativeLayout>

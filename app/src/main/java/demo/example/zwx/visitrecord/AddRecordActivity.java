@@ -1,9 +1,14 @@
 package demo.example.zwx.visitrecord;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
+
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 public class AddRecordActivity extends ActionBarActivity {
 
@@ -34,4 +39,15 @@ public class AddRecordActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void onSubmit(View view){
+        //TODO save date
+        String visitor =((EditText)this.findViewById(R.id.name)).getText().toString();
+        String situation = ((EditText)this.findViewById(R.id.situation)).getText().toString();
+        String interview = ((EditText)this.findViewById(R.id.interview)).getText().toString();
+
+        Log.i("dd",visitor+ " "+situation+" "+ interview);
+
+    }
+
 }

@@ -18,19 +18,11 @@
         android:layout_alignParentTop="false"
        />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:text="探访人："
-        android:id="@+id/textView3" />
-
-
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/textView"
         android:orientation="vertical" >
 
         <TextView
@@ -42,13 +34,19 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
 
+            <!--<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name" />-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/name" />
+                android:layout_below="@+id/textView"
+                android:text="@string/visitor"
+                android:id="@+id/invitor" />
 
             <EditText
-                android:id="@+id/nm"
+                android:id="@+id/name"
                 android:inputType="text"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
@@ -66,7 +64,7 @@
                 android:text="@string/interviewee" />
 
             <EditText
-                android:id="@+id/ag"
+                android:id="@+id/interview"
                 android:inputType="text"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
@@ -84,7 +82,7 @@
                 android:text="@string/situation" />
 
             <EditText
-                android:id="@+id/pzs"
+                android:id="@+id/situation"
                 android:inputType="text"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
@@ -101,15 +99,41 @@
                 android:layout_height="wrap_content"
                 android:text="@string/date" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/address" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/situation" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 
 
-        <DatePicker
+        <!--<DatePicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/datePicker"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal" />-->
 
         <TextView
             android:layout_width="wrap_content"
@@ -120,7 +144,8 @@
             android:layout_width="60dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:text="@string/sumbit" >
+            android:text="@string/sumbit"
+            android:onClick="onSubmit">
         </Button>
     </LinearLayout>
 
