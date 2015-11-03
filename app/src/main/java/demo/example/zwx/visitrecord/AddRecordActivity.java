@@ -8,14 +8,21 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 
-public class AddRecordActivity extends ActionBarActivity {
+import android.widget.EditText;
+import android.widget.RadioGroup;
+
+public class AddRecordActivity extends ActionBarActivity implements RadioGroup.OnCheckedChangeListener {
+    private RadioGroup rg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_record);
+
+        rg = (RadioGroup) findViewById(R.id.radiogroup);
+        rg.setOnCheckedChangeListener(this);
+
     }
 
     @Override
@@ -47,6 +54,19 @@ public class AddRecordActivity extends ActionBarActivity {
         String interview = ((EditText)this.findViewById(R.id.interview)).getText().toString();
 
         Log.i("dd",visitor+ " "+situation+" "+ interview);
+
+    }
+
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+        switch(checkedId){
+            case R.id.radio1:
+                Log.i("tag:","旧地址");break;
+            case R.id.radio2:
+                Log.i("tag","新地址");break;
+
+        }
 
     }
 

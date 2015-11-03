@@ -110,6 +110,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/address" />
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/radiogroup">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/oldAddress"
+                    android:id="@+id/radio1"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/newAddress"
+                    android:id="@+id/radio2"/>
+            </RadioGroup>
+
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
@@ -129,11 +149,6 @@
         </LinearLayout>
 
 
-        <!--<DatePicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/datePicker"
-            android:layout_gravity="center_horizontal" />-->
 
         <TextView
             android:layout_width="wrap_content"
