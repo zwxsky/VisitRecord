@@ -1,13 +1,20 @@
 package demo.example.zwx.visitrecord;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends ActionBarActivity {
+
+    public EditText editText;
+    public EditText password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +45,29 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void login(View view){
-        startActivity(new Intent(this,PreviewActivity.class));
+        EditText user =  (EditText)findViewById(R.id.username);
+        String username = user.getText().toString();
+
+        EditText pwd =  (EditText)findViewById(R.id.password);
+        String password = pwd.getText().toString();
+
+        if( username.equals("root")  && password.equals("111222")){
+            startActivity(new Intent(this, PreviewActivity.class));
+        }else{
+            new AlertDialog.Builder(this).setPositiveButton("用户名或密码错误",new DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    EditText user =  (EditText)findViewById(R.id.username);
+                    EditText pwd =  (EditText)findViewById(R.id.password);
+                    user.setText("");
+                    pwd.setText("");
+                }
+            }).show();
+
+        }
+
+
 
     }
 }

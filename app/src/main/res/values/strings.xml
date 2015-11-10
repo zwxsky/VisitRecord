@@ -14,6 +14,10 @@
     <string name="visitRecord">探访记录</string>
     <string name="name">姓名</string>
     <string name="address">住址</string>
+    <string name="time">时间</string>
+    <string name="member">探访成员</string>
+    <string name="visit_complete">探访完成</string>
+
 
     <string name="reason">原由</string>
     <string name="deadline">截至时间</string>
@@ -28,15 +32,63 @@
     <string name="sumbit">提交</string>
     <string name="oldAddress">老地址</string>
     <string name="newAddress">新地址</string>
+    <string name="addMember">添加新成员</string>
+    <string name="mobile">手机</string>
+    <string name="birthday">出生年份</string>
+    <string name="type">类 型</string>
+    <string name="password">初始密码:123456</string>
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="finished">已完成</string>
+    <string name="visiting">进行中</string>
+    <string name="my_record">我的记录</string>
+    <string name="create_need">创建需求</string>
+    <string name="fillInfo">填写需求信息</string>
+    <string name="visitTo">探访对象</string>
+    <string name="visitMember">探访成员</string>
+    <string name="finish">完成</string>
+    <string name="completeInfo">完善信息</string>
+    <string name="deliveryDemand">待领需求</string>
 
+    <string name="quit">退出</string>
     <string-array name="assigners">
         <item>不指派</item>
         <item>philip</item>
         <item>xuweiwei</item>
         <item>zhuwx</item>
     </string-array>
+    <string-array name="type">
+        <item>同工</item>
+        <item>朋友 男</item>
+        <item>朋友 女</item>
+        <item>弟兄</item>
+        <item>姊妹</item>
+    </string-array>
+    <string-array name="year">
+        <item>1990</item>
+        <item>1991</item>
+        <item>1992</item>
+        <item>1993</item>
+        <item>1994</item>
+        <item>1995</item>
+    </string-array>
+
     <string name="title_activity_last_record">LastRecordActivity</string>
     <string name="title_activity_last_need">LastNeedActivity</string>
     <string name="title_activity_marquee">MarqueeActivity</string>
+    <string name="title_activity_add_member">AddMemberActivity</string>
+    <string name="login_title">同路人</string>
+    <string name="login_password">密码</string>
+    <string name="login">登录</string>
+    <string name="visit_arrange">探访安排</string>
+    <string name="need_to_receive">待领需求</string>
+    <string name="title_activity_visit_detail">VisitDetailActivity</string>
+    <string name="invisit_detail">探访信息</string>
+    <string name="title_activity_person_info">PersonInfoActivity</string>
+    <string name="title_activity_visit_arrange">VisitArrangeActivity</string>
+    <string name="title_activity_preview_person_info">PreviewPersonInfoActivity</string>
+    <string name="title_activity_my_record">MyRecordActivity</string>
+    <string name="createNeed">创建需求</string>
+    <string name="title_activity_delivery_demand">DeliveryDemandActivity</string>
 
 </resources>

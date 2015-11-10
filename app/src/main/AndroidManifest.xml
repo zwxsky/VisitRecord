@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="demo.example.zwx.visitrecord" >
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -39,6 +41,34 @@
         <activity
             android:name=".ListDisplay"
             android:label="@string/title_activity_last_need" >
+        </activity>
+        <activity
+            android:name=".AddMemberActivity"
+            android:label="@string/title_activity_add_member" >
+        </activity>
+        <activity
+            android:name=".VisitDetailActivity"
+            android:label="@string/title_activity_visit_detail" >
+        </activity>
+        <activity
+            android:name=".PersonInfoActivity"
+            android:label="@string/title_activity_person_info" >
+        </activity>
+        <activity
+            android:name=".VisitArrangeActivity"
+            android:label="@string/title_activity_visit_arrange" >
+        </activity>
+        <activity
+            android:name=".PreviewPersonInfoActivity"
+            android:label="@string/title_activity_preview_person_info" >
+        </activity>
+        <activity
+            android:name=".MyRecordActivity"
+            android:label="@string/title_activity_my_record" >
+        </activity>
+        <activity
+            android:name=".DeliveryDemandActivity"
+            android:label="@string/title_activity_delivery_demand" >
         </activity>
     </application>
 

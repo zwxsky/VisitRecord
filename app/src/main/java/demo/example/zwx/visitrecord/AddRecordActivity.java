@@ -1,5 +1,7 @@
 package demo.example.zwx.visitrecord;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 
 import android.os.Bundle;
@@ -19,9 +21,9 @@ public class AddRecordActivity extends ActionBarActivity implements RadioGroup.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_record);
-
-        rg = (RadioGroup) findViewById(R.id.radiogroup);
-        rg.setOnCheckedChangeListener(this);
+//
+//        rg = (RadioGroup) findViewById(R.id.radiogroup);
+//        rg.setOnCheckedChangeListener(this);
 
     }
 
@@ -47,7 +49,7 @@ public class AddRecordActivity extends ActionBarActivity implements RadioGroup.O
         return super.onOptionsItemSelected(item);
     }
 
-    public void onSubmit(View view){
+   /* public void onSubmit(View view){
         //TODO save date
         String visitor =((EditText)this.findViewById(R.id.name)).getText().toString();
         String situation = ((EditText)this.findViewById(R.id.situation)).getText().toString();
@@ -55,19 +57,39 @@ public class AddRecordActivity extends ActionBarActivity implements RadioGroup.O
 
         Log.i("dd",visitor+ " "+situation+" "+ interview);
 
-    }
+    }*/
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-        switch(checkedId){
-            case R.id.radio1:
-                Log.i("tag:","旧地址");break;
-            case R.id.radio2:
-                Log.i("tag","新地址");break;
+//        switch(checkedId){
+//            case R.id.radio1:
+//                Log.i("tag:","旧地址");break;
+//            case R.id.radio2:
+//                Log.i("tag","新地址");break;
+//
+//        }
 
-        }
+    }
 
+    public void showPersonInfo(View view){
+        startActivity(new Intent(this,PreviewPersonInfoActivity.class));
+    }
+
+    public void save(View view){
+        Log.i("personinfo","in save");
+        new AlertDialog.Builder(AddRecordActivity.this).setPositiveButton("保存成功",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(new Intent(AddRecordActivity.this, PreviewActivity.class));
+            }
+        }).show();
+
+
+    }
+
+    public void cancal(View view){
+        startActivity(new Intent(this,PreviewActivity.class));
     }
 
 }
