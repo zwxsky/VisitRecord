@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="demo.example.zwx.visitrecord" >
+    package="demo.example.zwx.activity" >
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="visitRecord.activity.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,57 +19,60 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PreviewActivity"
+            android:name="visitRecord.activity.PreviewActivity"
             android:label="@string/title_activity_preview" >
         </activity>
         <activity
-            android:name=".AddRecordActivity"
+            android:name="visitRecord.activity.AddRecordActivity"
             android:label="@string/title_activity_add_record" >
         </activity>
         <activity
-            android:name=".ReleaseVisitActivity"
+            android:name="visitRecord.activity.ReleaseVisitActivity"
             android:label="@string/title_activity_release_visit" >
         </activity>
         <activity
-            android:name=".LastRecordActivity"
+            android:name="visitRecord.activity.LastRecordActivity"
             android:label="@string/title_activity_last_record" >
         </activity>
         <activity
-            android:name=".LastNeedActivity"
+            android:name="visitRecord.activity.LastNeedActivity"
             android:label="@string/title_activity_last_need" >
         </activity>
         <activity
-            android:name=".ListDisplay"
+            android:name="visitRecord.activity.ListDisplay"
             android:label="@string/title_activity_last_need" >
         </activity>
         <activity
-            android:name=".AddMemberActivity"
+            android:name="visitRecord.activity.AddMemberActivity"
             android:label="@string/title_activity_add_member" >
         </activity>
         <activity
-            android:name=".VisitDetailActivity"
+            android:name="visitRecord.activity.VisitDetailActivity"
             android:label="@string/title_activity_visit_detail" >
         </activity>
         <activity
-            android:name=".PersonInfoActivity"
+            android:name="visitRecord.activity.PersonInfoActivity"
             android:label="@string/title_activity_person_info" >
         </activity>
         <activity
-            android:name=".VisitArrangeActivity"
+            android:name="visitRecord.activity.VisitArrangeActivity"
             android:label="@string/title_activity_visit_arrange" >
         </activity>
         <activity
-            android:name=".PreviewPersonInfoActivity"
+            android:name="visitRecord.activity.PreviewPersonInfoActivity"
             android:label="@string/title_activity_preview_person_info" >
         </activity>
         <activity
-            android:name=".MyRecordActivity"
+            android:name="visitRecord.activity.MyRecordActivity"
             android:label="@string/title_activity_my_record" >
         </activity>
         <activity
-            android:name=".DeliveryDemandActivity"
+            android:name="visitRecord.activity.DeliveryDemandActivity"
             android:label="@string/title_activity_delivery_demand" >
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

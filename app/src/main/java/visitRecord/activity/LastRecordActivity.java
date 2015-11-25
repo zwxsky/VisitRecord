@@ -1,24 +1,28 @@
-package demo.example.zwx.visitrecord;
+package visitRecord.activity;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-public class VisitDetailActivity extends ActionBarActivity {
+import demo.example.zwx.activity.R;
+
+public class LastRecordActivity extends ActionBarActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_visit_detail);
+        setContentView(R.layout.activity_last_record);
+
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_visit_detail, menu);
+        getMenuInflater().inflate(R.menu.menu_last_record, menu);
         return true;
     }
 
@@ -37,11 +41,5 @@ public class VisitDetailActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public  void showPersonInfo(View view){
-        startActivity(new Intent(this,PreviewPersonInfoActivity.class));
-    }
 
-    public void cancel(View view){
-        startActivity(new Intent(this,VisitArrangeActivity.class));
-    }
 }

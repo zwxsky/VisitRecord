@@ -8,7 +8,7 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/avatar"
+        android:background="@drawable/avatar"
         android:layout_gravity="center"
         android:id="@+id/avatar"
         android:onClick="showPersonInfo"/>
@@ -17,8 +17,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="昵称首字"
-        android:id="@+id/textView2"
+        android:text=""
+        android:id="@+id/firstName"
         android:layout_gravity="center" />
 
 </FrameLayout>

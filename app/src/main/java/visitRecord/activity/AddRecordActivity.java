@@ -1,4 +1,4 @@
-package demo.example.zwx.visitrecord;
+package visitRecord.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -11,8 +11,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import android.widget.EditText;
 import android.widget.RadioGroup;
+
+import demo.example.zwx.activity.R;
 
 public class AddRecordActivity extends ActionBarActivity implements RadioGroup.OnCheckedChangeListener {
     private RadioGroup rg;

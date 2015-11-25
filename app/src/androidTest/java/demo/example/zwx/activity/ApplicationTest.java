@@ -1,4 +1,4 @@
-package demo.example.zwx.visitrecord;
+package demo.example.zwx.activity;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

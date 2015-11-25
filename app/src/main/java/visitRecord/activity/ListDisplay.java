@@ -1,4 +1,4 @@
-package demo.example.zwx.visitrecord;
+package visitRecord.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,11 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.List;
+import demo.example.zwx.activity.R;
 
 /**
  * Created by luo on 15-10-30.

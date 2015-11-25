@@ -6,7 +6,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="demo.example.zwx.visitrecord.PreviewActivity">
+    tools:context="demo.example.zwx.visit_record.PreviewActivity">
 
 <!--第一部分-->
     <RelativeLayout
@@ -16,8 +16,8 @@
         android:layout_weight="1"
         >
         <include
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:id="@+id/layout"
             layout="@layout/avatar"
             android:layout_centerVertical="true"
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="right"
-            android:src="@drawable/setting"
+            android:background="@drawable/setting"
             android:id="@+id/setting"
             android:onClick="setting"
             android:layout_alignParentTop="true"
@@ -39,7 +39,7 @@
         <TextView
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:text="许伟伟"
+            android:text=""
             android:layout_below="@+id/layout"
             android:layout_centerHorizontal="true" />
 
@@ -54,15 +54,16 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         >
-        <RelativeLayout
+        <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/lightgrey"
+            android:id="@+id/arrange"
+            android:background="@drawable/arrange"
             android:layout_weight="1">
-            <ImageButton
+           <!-- <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/arrange"
+                android:background="@drawable/arrange"
                 android:id="@+id/arrange"
                 android:onClick="visitArrange"
                 android:layout_centerVertical="true"
@@ -74,15 +75,16 @@
                 android:layout_below="@+id/arrange"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="@string/visit_arrange"/>
-        </RelativeLayout>
+                android:text="@string/visit_arrange"/>-->
+        </ImageButton>
 
-        <RelativeLayout
+        <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
+            android:background="@drawable/edit"
+            android:id="@+id/edit"
             android:layout_weight="1">
-            <ImageButton
+            <!--<ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/edit"
@@ -97,8 +99,8 @@
                 android:layout_below="@+id/edit"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="@string/need_to_receive"/>
-        </RelativeLayout>
+                android:text="@string/need_to_receive"/>-->
+        </ImageButton>
 
 
     </TableRow>
@@ -118,13 +120,14 @@
         android:layout_weight="1"
         android:background="@color/ripple_material_dark">
 
-        <RelativeLayout
+        <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
+            android:background="@drawable/record"
+            android:id="@+id/record"
             android:layout_weight="1">
 
-             <ImageButton
+            <!-- <ImageButton
                  android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -139,16 +142,17 @@
                 android:layout_below="@+id/record"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="@string/my_record"/>
-        </RelativeLayout>
+                android:text="@string/my_record"/>-->
+        </ImageButton>
 
-        <RelativeLayout
+        <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
+            android:background="@drawable/createneed"
+            android:id="@+id/createRecord"
             android:layout_weight="1">
 
-            <ImageButton
+            <!--<ImageButton
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="1"
@@ -156,7 +160,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/createneed"
-                android:id="@+id/addrecord" />
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -164,8 +168,8 @@
                 android:layout_below="@+id/addrecord"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="@string/create_need"/>
-        </RelativeLayout>
+                android:text="@string/create_need"/>-->
+        </ImageButton>
     </TableRow>
     <!--第二部分-->
 

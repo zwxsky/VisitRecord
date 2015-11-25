@@ -1,18 +1,24 @@
-package demo.example.zwx.visitrecord;
+package visitRecord.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import demo.example.zwx.activity.R;
+
 public class PreviewActivity extends ActionBarActivity {
 
+    Button setting; //用户设置
+    Button arrange; //探访安排
+    Button edit;   //待领需求
+    Button record; //我的记录
+    Button createRecord; //发起需求
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
