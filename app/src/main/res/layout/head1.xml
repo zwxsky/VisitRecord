@@ -1,0 +1,43 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/mediumseagreen"
+    android:layout_width="match_parent"
+    style="@style/label_container"
+    android:layout_height="50dp"
+    android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/header_button"
+            android:layout_alignParentLeft="true"
+            android:background="@null"
+            android:drawableLeft="@drawable/back"
+            android:drawablePadding="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="5dp"
+            android:text="返回"
+            android:id="@+id/back" />
+
+       <!-- <TextView
+            android:id="@+id/group_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:text="探访刘海东"/>-->
+
+        <Button
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:textSize="18sp"
+            android:visibility="gone"
+            style="@style/header_button"
+            android:text="@string/edit"/>
+
+</RelativeLayout>

@@ -5,14 +5,17 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import org.xutils.view.annotation.ContentView;
+
 import demo.example.zwx.activity.R;
 
+@ContentView(R.layout.activity_my_record)
 public class MyRecordActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_record);
+
     }
 
     @Override
@@ -28,7 +31,6 @@ public class MyRecordActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;

@@ -1,189 +1,214 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="demo.example.zwx.visit_record.VisitArrangeActivity">
 
-    <LinearLayout
-        android:background="@color/mediumseagreen"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal">
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/fallback"
-            android:layout_gravity="center"
-            android:onClick="cancal"/>
-       <!-- <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:text="@string/cancel"
-            android:textColor="@color/white"
-            android:layout_gravity="center_vertical"/>-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:id="@+id/invisitTo"
-            android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:text="@string/createNeed"/>
-    </LinearLayout>
+
+    <include layout="@layout/head"/>
     <!-- title-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal"
         >
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="@string/fillInfo"
-            android:textSize="25dp"
-            android:gravity="center_horizontal"
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
             />
     </LinearLayout>
     <!-- title-->
 
-    <!-- form-->
-    <LinearLayout
+    <!--<LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="7"
-        android:background="@color/azure"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">-->
+
+
+
+    <!-- form-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="415dp"
         >
         <LinearLayout
-            android:paddingLeft="@dimen/activity_horizontal_margin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <TextView
-                android:layout_weight="2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/visitTo"/>
-            <EditText
-                android:layout_weight="3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="刘海东"/>
-        </LinearLayout>
 
-        <LinearLayout
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <TextView
-                android:layout_weight="2"
+            android:background="@color/grey_white"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/date"/>
-            <EditText
-                android:layout_weight="3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <TextView
-                android:layout_weight="2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/time"/>
-            <EditText
-                android:layout_weight="3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_horizontal_margin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <TextView
-                android:layout_weight="2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/address"/>
-            <EditText
-                android:layout_weight="3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_horizontal_margin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:orientation="vertical">
-            <TextView
-                android:layout_weight="2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/visitMember"/>
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    style="@style/label_title_vertical_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/visitTo"/>
+                <EditText
+                    style="@style/label_vertical_content"
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="刘海东"/>
+            </LinearLayout>
 
             <LinearLayout
-                android:layout_weight="3"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+                <TextView
 
-                <include
-                    android:layout_width="wrap_content"
+                    style="@style/label_title_vertical_small"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/layout"
-                    layout="@layout/avatar"
-                    >
-                </include>
+                    android:text="@string/date"/>
+                <EditText
+                    style="@style/label_vertical_content"
+                    android:id="@+id/gmtVisit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
 
-                <ImageButton
-                    android:layout_width="wrap_content"
+            <!--<LinearLayout
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_weight="2"
+                    style="@style/label_title_vertical_small"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/add_member"/>
+                    android:text="截止时间"/>
+                <EditText
+                    android:layout_weight="3"
+                    style="@style/label_vertical_content"
+                    android:id="@+id/gmtDeadline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>-->
+
+           <!-- <LinearLayout
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/label_title_vertical_small"
+                    android:text="@string/time"/>
+                <EditText
+                    style="@style/label_vertical_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>-->
+
+            <LinearLayout
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    style="@style/label_title_vertical_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/address"/>
+                <EditText
+                    android:id="@+id/addr"
+                    style="@style/label_vertical_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    style="@style/label_title_vertical_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reason"/>
+                <EditText
+                    android:id="@+id/reason"
+                    style="@style/label_vertical_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+                <TextView
+                    style="@style/label_title_vertical_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/visitMember"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/layout"
+                        layout="@layout/avatar"
+                        >
+                    </include>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/addBtn"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/add_btn"/>
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
+    </ScrollView>
 
-    </LinearLayout>
     <!-- /form-->
 
-    <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1"
-    android:orientation="vertical">
-     <Button
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/finish"
         android:textSize="20dp"
-        android:onClick="save"
+        android:id="@+id/save"
         android:layout_gravity="center"
         android:background="@color/mediumseagreen"
         android:textColor="@color/white"/>
-    </LinearLayout>
+
+
+
+
 </LinearLayout>

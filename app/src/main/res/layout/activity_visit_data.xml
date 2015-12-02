@@ -4,7 +4,7 @@
 
 
     <LinearLayout
-        android:background="@color/mintcream"
+        android:background="@color/grey_white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -24,7 +24,7 @@
 
     <LinearLayout android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/darkgrey"></LinearLayout>
+        android:background="@color/middle_sepataor_line"></LinearLayout>
 
 
 </LinearLayout>

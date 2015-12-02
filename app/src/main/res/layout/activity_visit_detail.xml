@@ -1,46 +1,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/grey_white"
     tools:context="demo.example.zwx.visit_record.VisitDetailActivity">
 
+<!--用于探访安排-->
+    <include layout="@layout/head"/>
+
     <LinearLayout
-        android:background="@color/mediumseagreen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/fallback"
-            android:layout_gravity="center"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:id="@+id/invisitTo"
-            android:layout_gravity="center_horizontal"
-            android:textColor="@color/white"
-            android:textSize="25dp"
-            android:text="探访刘海东"/>
-    </LinearLayout>
-    <LinearLayout
-        android:background="@color/gainsboro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical"
+        android:orientation="horizontal"
+        android:gravity="center"
         >
         <TextView
             android:text="@string/invisit_detail"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
             android:textSize="30dp"
-            />
+             />
     </LinearLayout>
 
     <LinearLayout android:layout_width="match_parent"
@@ -48,143 +28,163 @@
         android:background="@color/black"></LinearLayout>
 
     <LinearLayout
-        android:background="@color/mintcream"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:background="@color/listview_foucs"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="@string/name"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:text="刘海动"/>
-    </LinearLayout>
 
-    <LinearLayout android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/darkgrey"></LinearLayout>
-    <LinearLayout
-        android:background="@color/mintcream"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="@string/date"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:text="20115-11-25"/>
-    </LinearLayout>
-
-    <LinearLayout android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/darkgrey"></LinearLayout>
-
-    <LinearLayout
-        android:background="@color/mintcream"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="@string/time"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:text="下午 2：20"/>
-    </LinearLayout>
-
-    <LinearLayout android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/darkgrey"></LinearLayout>
-
-    <LinearLayout
-        android:background="@color/mintcream"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="@string/address"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:text="滨江区浦沿街道联庄一区115号"/>
-    </LinearLayout>
-
-
-    <LinearLayout android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/darkgrey"></LinearLayout>
-
-    <LinearLayout
-        android:background="@color/mintcream"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="@string/member"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="探访对象"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:id="@+id/name"
+                android:text="刘海动"/>
+        </LinearLayout>
 
-            <include
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/middle_sepataor_line"></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                layout="@layout/avatar"
-                />
+                android:textSize="20dp"
+                android:text="@string/date"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:id="@+id/gmtVisit"
+                android:text="20115-11-25"/>
+        </LinearLayout>
 
-            <include
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/middle_sepataor_line"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                layout="@layout/avatar"
-                />
-            <include
+                android:textSize="20dp"
+                android:text="探访原因"/>
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                layout="@layout/avatar"
-                />
+                android:textSize="25dp"
+                android:id="@+id/reason"
+                android:text="生病住院"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/middle_sepataor_line"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="@string/address"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:id="@+id/addr"
+                android:text="滨江区浦沿街道联庄一区115号"/>
         </LinearLayout>
 
 
-    </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/middle_sepataor_line"></LinearLayout>
 
-    <!--<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@color/mediumseagreen">-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="@string/member"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    layout="@layout/avatar"
+                    />
+
+                <include
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    layout="@layout/avatar"
+                    />
+                <include
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    layout="@layout/avatar"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/visit_complete"
             android:textSize="30dp"
+            android:id="@+id/finishVisit"
             android:layout_gravity="center"
-            android:background="@color/mediumseagreen"
+            android:visibility="visible"
+            android:background="@color/green"
             android:textColor="@color/white"/>
-   <!-- </LinearLayout>-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="加入探访"
+            android:textSize="30dp"
+            android:id="@+id/addVisit"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:background="@color/green"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+
+
+
+
 
 
 </LinearLayout>

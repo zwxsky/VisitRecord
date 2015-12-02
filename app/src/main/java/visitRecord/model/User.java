@@ -1,5 +1,7 @@
 package visitRecord.model;
 
+import java.util.Date;
+
 /**
  * Created by luo on 15-11-17.
  */
@@ -10,64 +12,76 @@ public class User extends Base {
      */
     private static final long serialVersionUID = 1L;
 
+    /**姓名*/
     private String name;
+    /**联系方式*/
     private String phone;
-    private String password;
+    /**密码*/
     private String pwd;
+    /**年龄*/
     private Integer age;
-    private String address;
+    /**住址*/
+    private String addr;
+    /**类型:
+     0:同工
+     1:朋友男, 2:朋友女
+     3:弟兄, 4:姊妹
+     5:男孩, 6:女孩*/
     private Integer type;
+    /**0:正常;1:删除*/
     private Boolean isDisable;
 
-    public String getPwd() {
-        return pwd;
+    public User(){
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setName(String value) {
+        this.name = value;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setPhone(String value) {
+        this.phone = value;
     }
+
     public String getPhone() {
-        return phone;
+        return this.phone;
     }
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPwd(String value) {
+        this.pwd = value;
     }
-    public String getPassword() {
-        return password;
+
+    public String getPwd() {
+        return this.pwd;
     }
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAge(Integer value) {
+        this.age = value;
     }
+
     public Integer getAge() {
-        return age;
+        return this.age;
     }
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setAddr(String value) {
+        this.addr = value;
     }
-    public String getAddress() {
-        return address;
+
+    public String getAddr() {
+        return this.addr;
     }
-    public void setAddress(String address) {
-        this.address = address;
+    public void setType(Integer value) {
+        this.type = value;
     }
+
     public Integer getType() {
-        return type;
+        return this.type;
     }
-    public void setType(Integer type) {
-        this.type = type;
+    public void setIsDisable(Boolean value) {
+        this.isDisable = value;
     }
+
     public Boolean getIsDisable() {
-        return isDisable;
-    }
-    public void setIsDisable(Boolean isDisable) {
-        this.isDisable = isDisable;
+        return this.isDisable;
     }
 
 }

@@ -11,6 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import demo.example.zwx.activity.R;
 
 /**
@@ -46,10 +49,17 @@ public class ListDisplay extends Activity {
         visitor.setAdapter(visitors);*/
 
         ListView listView = (ListView)findViewById(R.id.list);
+
+        List<User> uList = new ArrayList<User>();
+        uList.add(new User("wangfl","xiaozhi ","to much things","2015-9-1"));
+        uList.add(new User("wangfl","daxu ","to weak","2015-9-1"));
+        uList.add(new User("wangfl","zhuwx ","to young too simple","2015-9-10"));
+
+//        adapter.add(new User("wangfl","xiaozhi ","to much things","2015-9-1"));
+//        adapter.add(new User("wangfl","daxu ","to weak","2015-9-1"));
+//        adapter.add(new User("wangfl","zhuwx ","to young too simple","2015-9-10"));
         UserAdapter adapter = new UserAdapter(this,R.layout.activity_listview);
-        adapter.add(new User("wangfl","xiaozhi ","to much things","2015-9-1"));
-        adapter.add(new User("wangfl","daxu ","to weak","2015-9-1"));
-        adapter.add(new User("wangfl","zhuwx ","to young too simple","2015-9-10"));
+        adapter.addAll(uList);
         listView.setAdapter(adapter);
 
        /* ArrayAdapter interviewees = new ArrayAdapter(this,R.layout.activity_listview,intervieweeArr);

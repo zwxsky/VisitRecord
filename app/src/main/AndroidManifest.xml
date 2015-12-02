@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="demo.example.zwx.activity" >
+    package="demo.example.zwx.activity"
+    android:installLocation="preferExternal" >
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name="visitRecord.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -70,9 +76,16 @@
             android:name="visitRecord.activity.DeliveryDemandActivity"
             android:label="@string/title_activity_delivery_demand" >
         </activity>
+        <activity
+            android:name="visitRecord.activity.VisitDetailEditActivity"
+            android:label="@string/title_activity_visit_detail_edit"
+            android:windowSoftInputMode="adjustPan"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+        <activity
+            android:name="visitRecord.activity.LogsActivity"
+            android:label="@string/title_activity_logs" >
+        </activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

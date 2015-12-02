@@ -3,21 +3,24 @@ package visitRecord.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import demo.example.zwx.activity.R;
+import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 
-public class PersonInfoActivity extends ActionBarActivity {
+import demo.example.zwx.activity.R;
+import visitRecord.Base.BaseActivity;
+
+@ContentView(R.layout.activity_person_info)
+public class PersonInfoActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_person_info);
     }
 
     @Override
@@ -43,7 +46,7 @@ public class PersonInfoActivity extends ActionBarActivity {
     }
 
     public  void showPersonInfo(View view){
-        startActivity(new Intent(this,PreviewPersonInfoActivity.class));
+        startActivity(new Intent(this, PreviewPersonInfoActivity.class));
     }
 
     public void save(View view){
@@ -58,10 +61,15 @@ public class PersonInfoActivity extends ActionBarActivity {
 
     }
 
-    public void cancel(View view){
-        startActivity(new Intent(this,PreviewActivity.class));
+    @Event(value=R.id.back)
+    private void onBackClick(View view){
+        finish();
     }
 
 
+    @Event(value=R.id.avatar)
+    private void onAvatarClick(View view) {
+        startActivity(new Intent(this, PreviewPersonInfoActivity.class));
+    }
 
 }

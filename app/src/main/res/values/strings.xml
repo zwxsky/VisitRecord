@@ -49,6 +49,7 @@
     <string name="finish">完成</string>
     <string name="completeInfo">完善信息</string>
     <string name="deliveryDemand">待领需求</string>
+    <string name="edit">编辑</string>
 
     <string name="quit">退出</string>
     <string-array name="assigners">
@@ -90,5 +91,7 @@
     <string name="title_activity_my_record">MyRecordActivity</string>
     <string name="createNeed">创建需求</string>
     <string name="title_activity_delivery_demand">DeliveryDemandActivity</string>
+    <string name="title_activity_visit_detail_edit">VisitDetailEditActivity</string>
+    <string name="title_activity_logs">LogsActivity</string>
 
 </resources>

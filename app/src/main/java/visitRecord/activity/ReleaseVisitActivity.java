@@ -1,20 +1,22 @@
 package visitRecord.activity;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import demo.example.zwx.activity.R;
+import org.xutils.view.annotation.ContentView;
 
-public class ReleaseVisitActivity extends ActionBarActivity {
+import demo.example.zwx.activity.R;
+import visitRecord.Base.BaseActivity;
+
+@ContentView(R.layout.activity_release_visit)
+public class ReleaseVisitActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_release_visit);
     }
 
     @Override

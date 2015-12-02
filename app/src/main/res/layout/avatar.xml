@@ -11,7 +11,7 @@
         android:background="@drawable/avatar"
         android:layout_gravity="center"
         android:id="@+id/avatar"
-        android:onClick="showPersonInfo"/>
+        />
 
     <TextView
         android:layout_width="wrap_content"

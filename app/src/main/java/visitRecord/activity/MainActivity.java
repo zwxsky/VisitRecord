@@ -1,9 +1,6 @@
 package visitRecord.activity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +17,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
+import org.xutils.view.annotation.ContentView;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -27,9 +25,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import demo.example.zwx.activity.R;
+import visitRecord.Base.BaseActivity;
 import visitRecord.model.User;
 
-public class MainActivity extends ActionBarActivity {
+@ContentView(R.layout.activity_main)
+public class MainActivity extends BaseActivity {
 
     public EditText editText;
     public EditText password;
@@ -38,7 +38,6 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
     }
 
     @Override
@@ -64,18 +63,19 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void login(View view){
-        EditText account =  (EditText)findViewById(R.id.username);
-        String username = account.getText().toString();
-
-        EditText pwd =  (EditText)findViewById(R.id.password);
-        String password = pwd.getText().toString();
-        User user = new User();
-        user.setName(username);
-        user.setPwd(password);
+//        EditText account =  (EditText)findViewById(R.id.username);
+//        String username = account.getText().toString();
+//
+//        EditText pwd =  (EditText)findViewById(R.id.password);
+//        String password = pwd.getText().toString();
+//        User user = new User();
+//        user.setName(username);
+//        user.setPwd(password);
+        startActivity(new Intent(this, PreviewActivity.class));
 
         //verifyAccout(user);
 
-        if( username.equals("root")  && password.equals("111222")){
+        /*if( username.equals("root")  && password.equals("111222")){
             startActivity(new Intent(this, PreviewActivity.class));
         }else{
             new AlertDialog.Builder(this).setPositiveButton("用户名或密码错误",new DialogInterface.OnClickListener() {
@@ -88,18 +88,13 @@ public class MainActivity extends ActionBarActivity {
                     pwd.setText("");
                 }
             }).show();
-
-        }
-
-
-
+            }*/
     }
 
     public Boolean verifyAccout(User user){
         String uri ="";
         httpPost = new HttpPost(uri);
         HttpResponse httpResponse;
-
         try {
             //设置httpPost请求参数
             String url="http://192.168.1.108:8080/login";

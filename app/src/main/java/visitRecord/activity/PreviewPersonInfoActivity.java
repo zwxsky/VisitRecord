@@ -4,53 +4,30 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import demo.example.zwx.activity.R;
+import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 
-public class PreviewPersonInfoActivity extends ActionBarActivity {
+import demo.example.zwx.activity.R;
+import visitRecord.Base.BaseActivity;
+
+@ContentView(R.layout.activity_preview_person_info)
+public class PreviewPersonInfoActivity extends BaseActivity {
 
     TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_preview_person_info);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_preview_person_info, menu);
 
 
-
-        textView = (TextView) findViewById(R.id.mobile);
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                new AlertDialog.Builder(PreviewPersonInfoActivity.this)
-                        .setTitle("点击拨打电话")
-                        .setPositiveButton("拨打电话", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                String number = ((TextView) findViewById(R.id.mobile)).getText().toString();
-                                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
-                                startActivity(intent);
-                            }
-                        }).show();
-            }
-        });
-
-        return true;
-
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -65,5 +42,27 @@ public class PreviewPersonInfoActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Event(value=R.id.back)
+
+    private void onBackClick(View view){
+        finish();
+    }
+
+    @Event(value = R.id.mobile)
+    private void onMobileClick(View view){
+        new AlertDialog.Builder(PreviewPersonInfoActivity.this)
+                .setTitle("点击拨打电话")
+                .setPositiveButton("拨打电话", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String number = ((TextView) findViewById(R.id.mobile)).getText().toString();
+                        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("取消",null)
+                .show();
     }
 }

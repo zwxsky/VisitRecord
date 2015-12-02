@@ -3,36 +3,41 @@ package visitRecord.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
+import org.xutils.view.annotation.ContentView;
 
 import demo.example.zwx.activity.R;
+import visitRecord.Base.BaseActivity;
 
-public class PreviewActivity extends ActionBarActivity {
+@ContentView(R.layout.activity_preview)
+public class PreviewActivity extends BaseActivity implements View.OnClickListener {
 
-    Button setting; //用户设置
-    Button arrange; //探访安排
-    Button edit;   //待领需求
-    Button record; //我的记录
-    Button createRecord; //发起需求
+    ImageButton setting; //用户设置
+    TextView arrange; //探访安排
+    TextView edit;   //待领需求
+    TextView record; //我的记录
+    TextView addRecord; //发起需求
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_preview);
 
-//        Button button = (Button)findViewById(R.id.sendNeed);
+        setting = (ImageButton)findViewById(R.id.setting);
+        arrange = (TextView)findViewById(R.id.arrange);
+        edit = (TextView)findViewById(R.id.edit);
+        record = (TextView)findViewById(R.id.record);
+        addRecord = (TextView)findViewById(R.id.addRecord);
 
-        /*button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                startActivity(new Intent(this,ReleaseVisitActivity.class));
-                Log.i("debug:", "click sendNeed");
-            }
-        });*/
+        setting.setOnClickListener(this);
+        arrange.setOnClickListener(this);
+        edit.setOnClickListener(this);
+        record.setOnClickListener(this);
+        addRecord.setOnClickListener(this);
     }
 
     @Override
@@ -67,46 +72,35 @@ public class PreviewActivity extends ActionBarActivity {
                         }
 
             }).show();
-
             return true;
         }
-
         return super.onOptionsItemSelected(item);
-    }
-
-
-    public void setting(View view){
-        startActivity(new Intent(this,PersonInfoActivity.class));
-    }
-
-
-    /*
-    我的记录
-    */
-    public void myRecord(View view){
-
-        startActivity(new Intent(this,ListDisplay.class));
-    }
-
-    /*
-    待领需求
-    */
-    public void showLastNeed(View view){
-
-        startActivity(new Intent(this,DeliveryDemandActivity.class));
-    }
-
-
-    public void createNeed(View view){
-        startActivity(new Intent(this,AddRecordActivity.class));
-    }
-
-
-    public void visitArrange(View view){
-        startActivity(new Intent(this,VisitArrangeActivity.class));
     }
 
     public void showPersonInfo(View view){
         startActivity(new Intent(this,PersonInfoActivity.class));
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            /*各人设置*/
+            case R.id.setting:
+                startActivity(new Intent(this,PersonInfoActivity.class));break;
+           /* 探访安排*/
+            case R.id.arrange:
+                startActivity(new Intent(this,VisitArrangeActivity.class));break;
+           /* 待领需求*/
+            case R.id.edit:
+                startActivity(new Intent(this,DeliveryDemandActivity.class));
+            break;
+            /*我的记录*/
+            case R.id.record:
+                startActivity(new Intent(this,ListDisplay.class));break;
+           /* 创建需求*/
+            case R.id.addRecord:
+                startActivity(new Intent(this,AddRecordActivity.class));break;
+        }
+
     }
 }
