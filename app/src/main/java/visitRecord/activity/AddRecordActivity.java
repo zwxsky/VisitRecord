@@ -24,6 +24,7 @@ import org.xutils.view.annotation.ViewInject;
 
 import demo.example.zwx.activity.R;
 import visitRecord.Base.BaseActivity;
+import visitRecord.Base.MineActivity;
 import visitRecord.model.CustomDate;
 import visitRecord.model.RecordModel;
 import visitRecord.util.DateTimePickDialogUtil;
@@ -31,7 +32,7 @@ import visitRecord.util.DateUtil;
 import visitRecord.util.DateUtils;
 
 @ContentView(R.layout.activity_add_record)
-public class AddRecordActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
+public class AddRecordActivity extends MineActivity implements RadioGroup.OnCheckedChangeListener {
     private CustomDate date;
     @ViewInject(R.id.gmtVisit)
     private EditText gmtVisit;

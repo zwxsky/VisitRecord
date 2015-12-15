@@ -1,4 +1,4 @@
-package visitRecord.Adapter;
+package visitRecord.adapter;
 
 /**
  * Created by luo on 15-12-1.

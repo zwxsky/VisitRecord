@@ -41,7 +41,6 @@
     <string name="save">保存</string>
     <string name="finished">已完成</string>
     <string name="visiting">进行中</string>
-    <string name="my_record">我的记录</string>
     <string name="create_need">创建需求</string>
     <string name="fillInfo">填写需求信息</string>
     <string name="visitTo">探访对象</string>
@@ -82,6 +81,7 @@
     <string name="login_password">密码</string>
     <string name="login">登录</string>
     <string name="visit_arrange">探访安排</string>
+    <string name="my_record">我的记录</string>
     <string name="need_to_receive">待领需求</string>
     <string name="title_activity_visit_detail">VisitDetailActivity</string>
     <string name="invisit_detail">探访信息</string>
@@ -93,5 +93,29 @@
     <string name="title_activity_delivery_demand">DeliveryDemandActivity</string>
     <string name="title_activity_visit_detail_edit">VisitDetailEditActivity</string>
     <string name="title_activity_logs">LogsActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
+
+    <!--个人设置-->
+    <string name="modify_pwd">修改密码</string>
+    <string name="desc"></string>
+    <string name="check_versioin">检查更新</string>
+    <string name="person_info">个人资料</string>
+    <string name="set_feedback">反馈意见</string>
+    <string name="logout">退出登录</string>
+    <string name="title_activity_visited_person_info">VisitedPersonInfoActivity</string>
+    <string name="title_activity_calendar">CalendarActivity</string>
+    <!--个人设置-->
+
+    <!--calendar-->
+    <string name="sunday">日</string>
+    <string name="monday">一</string>
+    <string name="thesday">二</string>
+    <string name="wednesday">三</string>
+    <string name="thursday">四</string>
+    <string name="friday">五</string>
+    <string name="saturday">六</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_interviewee">IntervieweeActivity</string>
+    <!--calendar-->
 
 </resources>

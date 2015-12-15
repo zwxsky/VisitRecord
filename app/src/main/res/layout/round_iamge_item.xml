@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <!--
+    <com.playcar.view.roundedimageview.RoundedImageView
+        android:id="@+id/img_img"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:scaleType="centerCrop"
+        android:src="@drawable/car"
+        app:riv_border_color="@color/color_cccccc"
+        app:riv_corner_radius="5dip"
+        app:riv_oval="false" />
+    -->
+
+    <RelativeLayout
+        android:id="@+id/layout_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/img_gray_border_shape" 
+        android:padding="1dip">
+
+        <com.playcar.view.RoundAngleImageView
+            android:id="@+id/img_img"
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_default"
+            app:roundHeight="8dip"
+            app:roundWidth="8dip" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_delete"
+        android:layout_width="35dip"
+        android:layout_height="35dip"
+        android:layout_alignRight="@+id/layout_img"
+        android:layout_alignTop="@+id/layout_img"
+        android:padding="5dip"
+        android:src="@drawable/delete" />
+
+    <TextView
+        android:id="@+id/txt_values"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/layout_img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dip"
+        android:textColor="#333333" />
+
+</RelativeLayout>

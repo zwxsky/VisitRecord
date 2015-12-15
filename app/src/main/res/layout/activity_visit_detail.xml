@@ -38,7 +38,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -49,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="25dp"
                 android:id="@+id/name"
+                android:textColor="@color/blue_0091ff"
                 android:text="刘海动"/>
         </LinearLayout>
 
@@ -134,7 +136,24 @@
                 android:text="@string/member"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <visitRecord.view.HorizontalListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/listview"
+                    >
+
+
+                </visitRecord.view.HorizontalListView>
+
+                <!--<include
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    layout="@layout/avatar"
+                    />
 
                 <include
                     android:layout_width="wrap_content"
@@ -142,19 +161,12 @@
                     android:layout_marginLeft="10dp"
                     layout="@layout/avatar"
                     />
-
                 <include
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     layout="@layout/avatar"
-                    />
-                <include
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    layout="@layout/avatar"
-                    />
+                    />-->
             </LinearLayout>
         </LinearLayout>
 

@@ -44,6 +44,11 @@ public class CustomDate implements Serializable{
         return year+"-"+month+"-"+day;
     }
 
+
+    public String toYearMonth() {
+        return year+"年"+month+"月";
+    }
+
     public int getYear() {
         return year;
     }

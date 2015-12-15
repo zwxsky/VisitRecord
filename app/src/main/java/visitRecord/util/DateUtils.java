@@ -597,4 +597,89 @@ public class DateUtils {
         }
         return sreturn;
     }*/
+
+    public static Date getFirstDayOfMonth(Date date){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+        //获取当前月第一天：
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        c.set(Calendar.DAY_OF_MONTH, 1);//设置为1号,当前日期既为本月第一天
+        String first = format.format(c.getTime());
+        System.out.println("===============first:" + first);
+
+        return c.getTime();
+    }
+
+    public static Date getLastDayOfMonth(Date date){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+       /* //获取前月的第一天
+        Calendar   cal_1=Calendar.getInstance();//获取当前日期
+        cal_1.setTime(date);
+        cal_1.add(Calendar.MONTH, -1);
+        cal_1.set(Calendar.DAY_OF_MONTH, 1);//设置为1号,当前日期既为本月第一天
+        String firstDay = format.format(cal_1.getTime());
+        System.out.println("-----1------firstDay:" + firstDay);
+        //获取前月的最后一天
+        Calendar cale = Calendar.getInstance();
+        cale.set(Calendar.DAY_OF_MONTH, 0);//设置为1号,当前日期既为本月第一天
+        String lastDay = format.format(cale.getTime());
+        System.out.println("-----2------lastDay:" + lastDay);
+
+        //获取当前月第一天：
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.MONTH, 0);
+        c.set(Calendar.DAY_OF_MONTH, 1);//设置为1号,当前日期既为本月第一天
+        String first = format.format(c.getTime());
+        System.out.println("===============first:" + first);*/
+
+        //获取当前月最后一天
+        Calendar ca = Calendar.getInstance();
+        ca.setTime(date);
+        ca.set(Calendar.DAY_OF_MONTH, ca.getActualMaximum(Calendar.DAY_OF_MONTH));
+        String last = format.format(ca.getTime());
+        System.out.println("===============last:" + last);
+
+        return  ca.getTime();
+    }
+
+    /**
+     * 获取相对于指定时间
+     * @param date
+     * @param field like: Calendar.MONTH
+     * @param add  0未本月，1为下个月，-1为上一个月
+     * @return
+     */
+    public static Date getRelativeDate(Date date, int field, int add) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(field, add);
+        return cal.getTime();
+    }
+
+
+
+    public static Date parseDate(String dateStr, String format) {
+        Date res = null;
+
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+
+        try{
+            res = sdf.parse(dateStr);
+        }catch(Exception e){
+            res = new Date();
+        }
+        return res;
+    }
+
+    public static String dateToStr(Date date,String format){
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        return  sdf.format(date);
+    }
+
+    public static void main(String[] args) {
+       System.out.println(getFirstDayOfMonth(new Date()));
+
+    }
 }

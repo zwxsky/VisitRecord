@@ -55,6 +55,7 @@ public class User extends Base {
     public String getPwd() {
         return this.pwd;
     }
+
     public void setAge(Integer value) {
         this.age = value;
     }
@@ -62,6 +63,7 @@ public class User extends Base {
     public Integer getAge() {
         return this.age;
     }
+
     public void setAddr(String value) {
         this.addr = value;
     }
@@ -69,6 +71,7 @@ public class User extends Base {
     public String getAddr() {
         return this.addr;
     }
+
     public void setType(Integer value) {
         this.type = value;
     }
@@ -76,6 +79,7 @@ public class User extends Base {
     public Integer getType() {
         return this.type;
     }
+
     public void setIsDisable(Boolean value) {
         this.isDisable = value;
     }

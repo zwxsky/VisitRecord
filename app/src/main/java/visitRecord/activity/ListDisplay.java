@@ -55,9 +55,6 @@ public class ListDisplay extends Activity {
         uList.add(new User("wangfl","daxu ","to weak","2015-9-1"));
         uList.add(new User("wangfl","zhuwx ","to young too simple","2015-9-10"));
 
-//        adapter.add(new User("wangfl","xiaozhi ","to much things","2015-9-1"));
-//        adapter.add(new User("wangfl","daxu ","to weak","2015-9-1"));
-//        adapter.add(new User("wangfl","zhuwx ","to young too simple","2015-9-10"));
         UserAdapter adapter = new UserAdapter(this,R.layout.activity_listview);
         adapter.addAll(uList);
         listView.setAdapter(adapter);

@@ -15,6 +15,8 @@ public class RecordModel extends Record{
 
     private Long uidEdit;
 
+    private List<VisitorModel> visitors;
+
     public Long getUidEdit() {
         return uidEdit;
     }
@@ -22,8 +24,6 @@ public class RecordModel extends Record{
     public void setUidEdit(Long uidEdit) {
         this.uidEdit = uidEdit;
     }
-
-    private List<User> visitors;
 
     public String getDate() {
         return date;
@@ -49,11 +49,11 @@ public class RecordModel extends Record{
         this.addr = addr;
     }
 
-    public List<User> getVisitors() {
+    public List<VisitorModel> getVisitors() {
         return visitors;
     }
 
-    public void setVisitors(List<User> visitors) {
+    public void setVisitors(List<VisitorModel> visitors) {
         this.visitors = visitors;
     }
 }

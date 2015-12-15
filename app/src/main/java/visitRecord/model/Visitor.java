@@ -15,6 +15,7 @@ public class Visitor extends Base {
     /**探访者ID*/
     private Long uid;
 
+
     public Visitor(){
     }
 
@@ -32,6 +33,7 @@ public class Visitor extends Base {
     public Long getUid() {
         return this.uid;
     }
+
 
 }
 

@@ -39,23 +39,25 @@
     android:background="#f6f1ea"
     >
 
-    <ImageButton
+    <Button
         android:id="@+id/btnPreMonth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginRight="33dip"
+        android:layout_marginRight="10dip"
         android:layout_toLeftOf="@+id/tvCurrentMonth"
-        android:background="@drawable/ic_before" />
+        android:drawableLeft="@drawable/ic_before"
+        android:background="#f6f1ea"/>
 
-    <ImageButton
+    <Button
         android:id="@+id/btnNextMonth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="33dip"
+        android:layout_marginLeft="50dip"
         android:layout_toRightOf="@+id/tvCurrentMonth"
-        android:background="@drawable/ic_next" />
+        android:drawableLeft="@drawable/ic_next"
+        android:background="#f6f1ea"/>
 
     <TextView
         android:id="@+id/tvCurrentMonth"
@@ -67,12 +69,12 @@
         android:textColor="#323232"
         android:textSize="22sp" />
 
-    <ImageButton
+    <!--<ImageButton
         android:id="@+id/btnClose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="15dp"
-        android:background="@drawable/ic_close" />
+        android:background="@drawable/ic_close" />-->
 </RelativeLayout>

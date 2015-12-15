@@ -4,18 +4,30 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+
+import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
+import org.xutils.view.annotation.ViewInject;
 
 import demo.example.zwx.activity.R;
+import visitRecord.Base.BaseActivity;
+import visitRecord.Base.MineActivity;
+import visitRecord.model.CustomDate;
 
-public class LastRecordActivity extends ActionBarActivity {
+@ContentView(R.layout.activity_last_record)
+public class LastRecordActivity extends MineActivity {
 
+
+    private CustomDate customDate;
+    @ViewInject(R.id.tvCurrentMonth)
+    TextView tvCurrentMonth;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_last_record);
-
 
     }
 
@@ -41,5 +53,29 @@ public class LastRecordActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Event(value = R.id.back)
+    private void OnBackClick(View view){
+        finish();
+    }
+
+
+    @Event(value = R.id.btnPreMonth)
+    private void onPreBtnClick(View view){
+
+        CustomDate custom = new CustomDate(customDate.getYear(),customDate.getMonth()-1,customDate.getDay());
+        customDate = custom;
+        tvCurrentMonth.setText(custom.toYearMonth());
+        //TODO 根据日期查询
+
+    }
+
+    @Event(value = R.id.btnNextMonth)
+    private void onNextBtnClick(View view){
+
+        CustomDate custom = new CustomDate(customDate.getYear(),customDate.getMonth()+1,customDate.getDay());
+        customDate = custom;
+        tvCurrentMonth.setText(custom.toYearMonth());
+        //TODO 根据日期查询
+    }
 
 }

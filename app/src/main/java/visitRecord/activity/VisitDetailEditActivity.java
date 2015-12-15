@@ -11,18 +11,15 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.BaseAdapter;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 
 import java.util.List;
-import java.util.zip.Inflater;
 
 import demo.example.zwx.activity.R;
-import visitRecord.Adapter.UserAdapter;
+import visitRecord.adapter.UserAdapter;
 import visitRecord.Base.BaseActivity;
 import visitRecord.model.User;
 

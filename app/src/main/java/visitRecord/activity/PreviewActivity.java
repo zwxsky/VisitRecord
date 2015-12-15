@@ -86,18 +86,18 @@ public class PreviewActivity extends BaseActivity implements View.OnClickListene
         switch (v.getId()){
             /*各人设置*/
             case R.id.setting:
-                startActivity(new Intent(this,PersonInfoActivity.class));break;
-           /* 探访安排*/
+                startActivity(new Intent(this,SettingActivity.class));break;
+            /* 探访安排*/
             case R.id.arrange:
                 startActivity(new Intent(this,VisitArrangeActivity.class));break;
-           /* 待领需求*/
+            /* 待领需求*/
             case R.id.edit:
                 startActivity(new Intent(this,DeliveryDemandActivity.class));
             break;
             /*我的记录*/
             case R.id.record:
-                startActivity(new Intent(this,ListDisplay.class));break;
-           /* 创建需求*/
+                startActivity(new Intent(this,MyRecordActivity.class));break;
+            /* 创建需求*/
             case R.id.addRecord:
                 startActivity(new Intent(this,AddRecordActivity.class));break;
         }

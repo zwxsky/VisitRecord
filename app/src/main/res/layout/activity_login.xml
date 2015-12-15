@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/round_button"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:textSize="40dp"
+            android:text="@string/login_title" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fellower"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center">
+        <!-- <TextView
+             android:text="用户名"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_column="2"/>-->
+        <EditText
+            android:width="200dp"
+            android:hint="@string/name"
+            android:layout_column="2"
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:width="200dp"
+            android:layout_column="2"
+            android:id="@+id/password"
+            android:inputType="textPassword"
+            android:hint="@string/login_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="@drawable/round_button"
+            android:text="@string/login"
+            android:textSize="30dp"
+            android:id="@+id/loginBtn"
+             />
+    </LinearLayout>
+
+</LinearLayout>

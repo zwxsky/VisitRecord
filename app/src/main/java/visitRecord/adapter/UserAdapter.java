@@ -1,4 +1,4 @@
-package visitRecord.Adapter;
+package visitRecord.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +9,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import demo.example.zwx.activity.R;
-import visitRecord.activity.VisitDetailEditActivity;
-import visitRecord.model.Base;
 import visitRecord.model.User;
 
 /**
@@ -56,4 +54,9 @@ public class UserAdapter extends BaseAdapter{
         viewHolder.name.setText(list.get(position).getName());
         return convertView;
     }
+
+
+
+
+
 }

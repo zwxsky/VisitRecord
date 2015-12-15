@@ -1,126 +1,110 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/copy"
-        android:src="@drawable/copy" />
+    android:orientation="vertical"
+    tools:context="demo.example.zwx.visit_record.VisitArrangeActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/copy"
-        android:text="@string/visitRecord" />
+    <RelativeLayout
+        android:background="@color/top_bg"
+        android:layout_width="match_parent"
+        style="@style/label_container"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/header_button"
+            android:layout_alignParentLeft="true"
+            android:background="@null"
+            android:drawableLeft="@drawable/back"
+            android:drawablePadding="5dp"
+            android:onClick="onClick"
+            android:paddingLeft="15dp"
+            android:paddingRight="5dp"
+            android:text="返回"
+            android:id="@+id/back" />
 
-    <ImageButton
-        android:layout_toRightOf="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/plus"
-        android:id="@+id/plus"
-        android:onClick="addRecord" />
+        <TextView
+            android:id="@+id/group_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:text="@string/my_record"/>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/search"
-        android:src="@drawable/search"
-        android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <!--日期插件-->
+
+    <include layout="@layout/date_fragment"
+        />
+
+    <!--日期插件-->
+
 
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/copy"
-        android:id="@+id/title">
-
-        <TextView
-            android:text="@string/visitor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_gravity="center" />
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/interviewee"
-            android:layout_weight="1"
-            android:layout_gravity="center" />
+            android:orientation="vertical">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/visiting"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:text="进行中（6）"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:id="@+id/visiting_line"
+                android:background="@color/green"
+                android:orientation="horizontal"/>
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/situation"
-            android:layout_weight="1"
-            android:layout_gravity="center" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/date"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_gravity="center" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/finished"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:text="已完成（6）"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:id="@+id/finished_line"
+                android:background="@color/gray"
+                android:orientation="horizontal"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <!--<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/title"
-        >-->
+
+
+    <!--  列表展示-->
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/list"
-        android:layout_below="@+id/title">
-
-    </ListView>
-    <!--<ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/interviewee"
-        android:layout_weight="1"
-        >
-
+        android:background="@color/grey_white"
+        android:divider="@color/middle_sepataor_line"
+        android:dividerHeight="0.5dp">
     </ListView>
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/situation"
-        android:layout_weight="1"
-        >
-
-    </ListView>
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/date"
-        android:layout_weight="1"
-        >
-
-    </ListView>-->
-    <!--</LinearLayout>-->
-
-    <!-- <GridView
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:id="@+id/gridView"
-         android:layout_marginBottom="42dp"
-         android:layout_alignParentBottom="true"
-         android:layout_alignParentLeft="true"
-         android:layout_alignParentStart="true" />-->
-
-
-</RelativeLayout>
+</LinearLayout>

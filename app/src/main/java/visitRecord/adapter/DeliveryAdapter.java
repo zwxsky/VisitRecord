@@ -1,23 +1,13 @@
-package visitRecord.Adapter;
+package visitRecord.adapter;
 
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import java.util.List;
-
-import visitRecord.model.RecordModel;
-import visitRecord.model.User;
-
 /**
- * Created by luo on 15-12-2.
+ * Created by luo on 15-11-27.
  */
-public class RecordAdapter extends BaseAdapter {
-
-    LayoutInflater mInflater;
-    List<RecordModel> list;
-
+public class DeliveryAdapter extends BaseAdapter{
     @Override
     public int getCount() {
         return 0;

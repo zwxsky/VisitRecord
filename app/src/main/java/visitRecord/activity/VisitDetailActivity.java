@@ -13,11 +13,16 @@ import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import demo.example.zwx.activity.R;
 import visitRecord.Base.BaseActivity;
+import visitRecord.adapter.AvatarAdapter;
 import visitRecord.model.RecordModel;
+import visitRecord.model.VisitorModel;
+import visitRecord.view.HorizontalListView;
 
 @ContentView(R.layout.activity_visit_detail)
 public class VisitDetailActivity extends BaseActivity {
@@ -37,7 +42,12 @@ public class VisitDetailActivity extends BaseActivity {
     @ViewInject(R.id.addVisit)
     private Button addVisit;
     private RecordModel record;
-    private Map<String,Object> map ;
+    private RecordModel recordModel ;
+    @ViewInject(R.id.listview)
+    HorizontalListView listView;
+    List<VisitorModel> list = new ArrayList<>();
+    AvatarAdapter adapter;
+
 
 
 
@@ -46,22 +56,28 @@ public class VisitDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_visit_detail);
         Intent intent = this.getIntent();
-        map = (Map<String, Object>) intent.getSerializableExtra("record");
-        if(map.get("status").equals(2)){
+        recordModel = (RecordModel) intent.getSerializableExtra("record");
+        if(recordModel.getStatus().equals(2)){
             finishVisit.setVisibility(View.GONE);
             addVisit.setVisibility(View.GONE);
         }
 
-        if(map.get("status").equals(1)){
+        if(recordModel.getStatus().equals(1)){
             finishVisit.setVisibility(View.VISIBLE);
             addVisit.setVisibility(View.GONE);
         }
-        if(map.get("status").equals(0)){
+        if(recordModel.getStatus().equals(0)){
 
             edit.setVisibility(View.VISIBLE);
             finishVisit.setVisibility(View.GONE);
             addVisit.setVisibility(View.VISIBLE);
         }
+
+        //TODO 获取recordModel详情  包括List<VisitorModel>
+
+        adapter = new AvatarAdapter(getData(17l),this);
+        listView.setAdapter(adapter);
+
 
 
 //        record = (RecordModel) intent.getSerializableExtra("record");
@@ -108,16 +124,17 @@ public class VisitDetailActivity extends BaseActivity {
     private void onFinishClick(View view){
         Intent intent = new Intent(this,LogsActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putSerializable("record",(Serializable)map);
+        bundle.putSerializable("record",(Serializable)recordModel);
         intent.putExtras(bundle);
         this.startActivity(intent);
+        //TODO 未完成里面删除,完成里面增加一条
     }
 
     @Event(value = R.id.addVisit)
     private void onAddVisitClick(View view){
         Intent intent = new Intent(this,VisitDetailEditActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putSerializable("record",(Serializable)map);
+        bundle.putSerializable("record",(Serializable)recordModel);
         intent.putExtras(bundle);
         this.startActivity(intent);
     }
@@ -126,9 +143,32 @@ public class VisitDetailActivity extends BaseActivity {
     private void onEditClick(View view){
         Intent intent = new Intent(this,VisitDetailEditActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putSerializable("record",(Serializable)map);
+        bundle.putSerializable("record",(Serializable)recordModel);
         intent.putExtras(bundle);
         this.startActivity(intent);
     }
+
+    @Event(value = R.id.name)
+    private void onNameClick(View view){
+        Intent intent = new Intent(this,IntervieweeActivity.class);
+        intent.putExtra("uid", recordModel.getUid());
+        startActivity(intent);
+    }
+
+    private List<VisitorModel> getData(Long rid){
+        //TODO 根据rid获取visitorlist
+        VisitorModel visitor1 = new VisitorModel();
+        visitor1.setName("张三");
+        VisitorModel visitor2 = new VisitorModel();
+        visitor1.setName("李四");
+        VisitorModel visitor3 = new VisitorModel();
+        visitor1.setName("王五");
+
+        list.add(visitor1);
+        list.add(visitor2);
+        list.add(visitor3);
+        return list;
+    }
+
 
 }
