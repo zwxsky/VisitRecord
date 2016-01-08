@@ -44,11 +44,12 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:text="探访对象"/>
-            <EditText
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25dp"
                 android:id="@+id/name"
+                android:textColor="@color/blue_514982"
                 android:text="刘海动"/>
         </LinearLayout>
 
@@ -141,7 +142,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:id="@+id/avatar1"
                     layout="@layout/avatar"
+
                     />
 
                 <include
@@ -149,12 +152,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     layout="@layout/avatar"
+                    android:id="@+id/avatar2"
                     />
                 <include
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     layout="@layout/avatar"
+                    android:id="@+id/avatar3"
                     />
                 <ImageButton
                     android:layout_width="wrap_content"

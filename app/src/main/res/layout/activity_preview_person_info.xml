@@ -5,7 +5,7 @@
     tools:context="demo.example.zwx.visit_record.PersonInfoActivity">
 
 
-    <include layout="@layout/head1"/>
+    <include layout="@layout/head"/>
 
     <RelativeLayout
         android:background="@color/mediumseagreen"
@@ -27,6 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="许伟伟"
+            android:id="@+id/avatar_name"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:layout_below="@+id/layout"
@@ -50,12 +51,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+
                 style="@style/label_title_small"
                 android:text="@string/name"
                 />
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="3"
+                android:id="@+id/name"
                 android:layout_height="wrap_content"
                 style="@style/label_content"
                 android:text="刘海动"/>
@@ -86,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:inputType="phone"
-                android:id="@+id/mobile"
+                android:id="@+id/phone"
                 style="@style/label_content"
                 android:text="15869166095"
                 android:textColor="@color/website_color"/>
@@ -115,6 +118,7 @@
                 android:layout_height="wrap_content"
                 style="@style/label_content"
                 android:layout_weight="3"
+                android:id="@+id/addr"
                 android:text="滨江区浦沿街道联庄一区115号"/>
         </LinearLayout>
 
@@ -135,13 +139,14 @@
                 android:layout_height="wrap_content"
                 style="@style/label_title_small"
                 android:layout_weight="1"
-                android:text="@string/birthday"/>
+                android:text="@string/age"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 style="@style/label_content"
                 android:layout_weight="3"
-                android:text="20115-11-25"/>
+                android:id="@+id/age"
+                android:text="23岁"/>
         </LinearLayout>
 
         <LinearLayout
@@ -167,6 +172,7 @@
                 android:layout_height="wrap_content"
                 style="@style/label_content"
                 android:entries="@array/type"
+                android:id="@+id/type"
                 android:layout_weight="3"
                 android:focusableInTouchMode="true"
                 />

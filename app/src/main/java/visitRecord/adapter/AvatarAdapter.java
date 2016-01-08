@@ -1,6 +1,7 @@
 package visitRecord.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -9,6 +10,7 @@ import java.util.List;
 
 import demo.example.zwx.activity.R;
 import visitRecord.model.RecordModel;
+import visitRecord.model.Visitor;
 import visitRecord.model.VisitorModel;
 import visitRecord.util.DateUtils;
 import visitRecord.util.ViewHolder;
@@ -16,15 +18,15 @@ import visitRecord.util.ViewHolder;
 /**
  * Created by luo on 15-12-15.
  */
-public class AvatarAdapter extends AdapterManager<VisitorModel> {
+public class AvatarAdapter extends AdapterManager<Visitor> {
 
-    public AvatarAdapter(List<VisitorModel> list, Context context) {
+    public AvatarAdapter(List<Visitor> list, Context context) {
         super(list, context);
     }
 
 
     @Override
-    public VisitorModel getItem(int position) {
+    public Visitor getItem(int position) {
         return null;
     }
 
@@ -42,13 +44,11 @@ public class AvatarAdapter extends AdapterManager<VisitorModel> {
 
         TextView avatar= ViewHolder.get(convertView, R.id.avatar);
 
-//        convertView.setTag(viewHolder);
-
-
-        System.out.println("首字："+list.get(position).getName().substring(0,1));
-        avatar.setText( list.get(position).getName().substring(0,1));
-
+//      convertView.setTag(viewHolder);
+        System.out.println("首字："+list.get(position).getUname().substring(0,1));
+        avatar.setText( list.get(position).getUname().substring(0,1));
 
         return convertView;
     }
+
 }

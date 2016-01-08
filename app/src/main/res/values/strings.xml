@@ -34,7 +34,7 @@
     <string name="newAddress">新地址</string>
     <string name="addMember">添加新成员</string>
     <string name="mobile">手机</string>
-    <string name="birthday">出生年份</string>
+    <string name="age">年龄</string>
     <string name="type">类 型</string>
     <string name="password">初始密码:123456</string>
     <string name="cancel">取消</string>

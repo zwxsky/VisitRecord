@@ -40,8 +40,8 @@ public class DeliveryDemandActivity extends MineActivity implements  AdapterView
     ListView listView;
     List<RecordModel> list = new ArrayList<RecordModel>();
     List<Map<String,Object>> mapList;
-    int pageFrom=0;
-    int pageTo=5;
+    int start=0;
+    int limit=5;
     CustomDate customDate;
     @ViewInject(R.id.tvCurrentMonth)
     TextView tvCurrentMonth;
@@ -121,10 +121,10 @@ public class DeliveryDemandActivity extends MineActivity implements  AdapterView
         switch (scrollState){
             case SCROLL_STATE_FLING:
                 Log.i("main", "用户在手指离开之前，由于用力滑了一下，视图依靠惯性继续滑动");
-                pageFrom =pageFrom+5;
-                pageTo = pageTo+5;
+                start =start+5;
+                limit = limit+5;
 
-                for(int i=pageFrom;i<pageTo;i++){
+                for(int i=start;i<limit;i++){
                     //TODO 获取record列表
                     RecordModel map = new RecordModel();
                     map.setTitle("探望青云" + i);
@@ -161,8 +161,8 @@ public class DeliveryDemandActivity extends MineActivity implements  AdapterView
         //TODO 根据日期查询
         cond.setFromTime(DateUtils.getFirstDayOfMonth(date));
         cond.setToTime(DateUtils.getLastDayOfMonth(date));
-        cond.setPageFrom(pageFrom);
-        cond.setPageTo(pageTo);
+        cond.setStart(start);
+        cond.setLimit(limit);
         adapter = new RecordAdapter(queryByCond(cond),this);
         listView.setAdapter(adapter);
 
@@ -180,8 +180,8 @@ public class DeliveryDemandActivity extends MineActivity implements  AdapterView
         //TODO 根据日期查询
         cond.setFromTime(DateUtils.getFirstDayOfMonth(date));
         cond.setToTime(DateUtils.getLastDayOfMonth(date));
-        cond.setPageFrom(pageFrom);
-        cond.setPageTo(pageTo);
+        cond.setStart(start);
+        cond.setLimit(limit);
         adapter = new RecordAdapter(queryByCond(cond),this);
         listView.setAdapter(adapter);
     }
@@ -208,8 +208,8 @@ public class DeliveryDemandActivity extends MineActivity implements  AdapterView
                 //TODO 查询对应的数据
                 cond.setFromTime(DateUtils.getFirstDayOfMonth(date));
                 cond.setToTime(DateUtils.getLastDayOfMonth(date));
-                cond.setPageFrom(pageFrom);
-                cond.setPageTo(pageTo);
+                cond.setStart(start);
+                cond.setLimit(limit);
                 adapter = new RecordAdapter(queryByCond(cond), this);
                 listView.setAdapter(adapter);
             }

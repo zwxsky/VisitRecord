@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -21,11 +23,12 @@ import demo.example.zwx.activity.R;
 import visitRecord.Base.BaseActivity;
 import visitRecord.adapter.AvatarAdapter;
 import visitRecord.model.RecordModel;
+import visitRecord.model.Visitor;
 import visitRecord.model.VisitorModel;
 import visitRecord.view.HorizontalListView;
 
 @ContentView(R.layout.activity_visit_detail)
-public class VisitDetailActivity extends BaseActivity {
+public class VisitDetailActivity extends BaseActivity implements OnItemClickListener {
 
     @ViewInject(R.id.name)
     private TextView name;
@@ -41,11 +44,10 @@ public class VisitDetailActivity extends BaseActivity {
     private Button finishVisit;
     @ViewInject(R.id.addVisit)
     private Button addVisit;
-    private RecordModel record;
     private RecordModel recordModel ;
     @ViewInject(R.id.listview)
     HorizontalListView listView;
-    List<VisitorModel> list = new ArrayList<>();
+    List<Visitor> list = new ArrayList<>();
     AvatarAdapter adapter;
 
 
@@ -77,6 +79,7 @@ public class VisitDetailActivity extends BaseActivity {
 
         adapter = new AvatarAdapter(getData(17l),this);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(this);
 
 
 
@@ -155,14 +158,20 @@ public class VisitDetailActivity extends BaseActivity {
         startActivity(intent);
     }
 
-    private List<VisitorModel> getData(Long rid){
+    private List<Visitor> getData(Long rid){
         //TODO 根据rid获取visitorlist
-        VisitorModel visitor1 = new VisitorModel();
-        visitor1.setName("张三");
-        VisitorModel visitor2 = new VisitorModel();
-        visitor1.setName("李四");
-        VisitorModel visitor3 = new VisitorModel();
-        visitor1.setName("王五");
+        Visitor visitor1 = new Visitor();
+        visitor1.setRid(1l);
+        visitor1.setUid(1l);
+        visitor1.setUname("张三");
+        Visitor visitor2 = new Visitor();
+        visitor2.setUname("李四");
+        visitor2.setRid(2l);
+        visitor2.setUid(2l);
+        Visitor visitor3 = new Visitor();
+        visitor3.setUname("王五");
+        visitor3.setRid(3l);
+        visitor3.setUid(3l);
 
         list.add(visitor1);
         list.add(visitor2);
@@ -171,4 +180,11 @@ public class VisitDetailActivity extends BaseActivity {
     }
 
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        toast("hello"+position+"  name:"+list.get(position).getUname());
+        Intent intent = new Intent(this,PreviewPersonInfoActivity.class);
+        intent.putExtra("uid",list.get(position).getUid());
+        startActivity(intent);
+    }
 }

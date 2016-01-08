@@ -145,13 +145,13 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:layout_weight="1"
-                android:text="@string/birthday"/>
+                android:text="@string/age"/>
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:layout_weight="3"
-                android:text="20115-11-25"/>
+                android:text="25"/>
         </LinearLayout>
 
         <LinearLayout

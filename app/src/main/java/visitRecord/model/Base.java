@@ -15,7 +15,7 @@ public class Base implements Serializable{
 
     private Long id;
 
-    private Date gmtCreated;
+    private Date gmtCreate;
 
     private Date gmtModify;
 
@@ -27,12 +27,12 @@ public class Base implements Serializable{
         this.id = id;
     }
 
-    public Date getGmtCreated() {
-        return gmtCreated;
+    public Date getGmtCreate() {
+        return gmtCreate;
     }
 
-    public void setGmtCreated(Date gmtCreated) {
-        this.gmtCreated = gmtCreated;
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
     }
 
     public Date getGmtModify() {

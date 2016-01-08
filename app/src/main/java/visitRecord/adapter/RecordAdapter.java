@@ -5,6 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import org.xutils.common.Callback;
+
 import java.util.List;
 
 import demo.example.zwx.activity.R;
@@ -45,7 +47,7 @@ public class RecordAdapter extends AdapterManager<RecordModel> {
 //        convertView.setTag(viewHolder);
 
 
-        title.setText("探访"+ list.get(position).getName());
+        title.setText("探访"+ list.get(position).getTitle());
         date.setText(list.get(position).getGmtVisit().toString());
         return convertView;
     }

@@ -11,9 +11,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 
 import demo.example.zwx.activity.R;
 import visitRecord.Base.BaseActivity;
+import visitRecord.Base.MineActivity;
 
 @ContentView(R.layout.activity_preview)
 public class PreviewActivity extends BaseActivity implements View.OnClickListener {
@@ -38,6 +40,8 @@ public class PreviewActivity extends BaseActivity implements View.OnClickListene
         edit.setOnClickListener(this);
         record.setOnClickListener(this);
         addRecord.setOnClickListener(this);
+
+        MineActivity.UID=1l;
     }
 
     @Override
@@ -102,5 +106,13 @@ public class PreviewActivity extends BaseActivity implements View.OnClickListene
                 startActivity(new Intent(this,AddRecordActivity.class));break;
         }
 
+    }
+
+    @Event(value = R.id.avatar)
+    private void onAvatarClick(View view){
+
+        Intent intent = new Intent(getBaseContext(),PreviewPersonInfoActivity.class);
+        intent.putExtra("uid", MineActivity.UID);
+        startActivity(intent);
     }
 }

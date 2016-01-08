@@ -15,6 +15,8 @@ public class Visitor extends Base {
     /**探访者ID*/
     private Long uid;
 
+    private String uname;
+
 
     public Visitor(){
     }
@@ -35,5 +37,12 @@ public class Visitor extends Base {
     }
 
 
+    public String getUname() {
+        return uname;
+    }
+
+    public void setUname(String uname) {
+        this.uname = uname;
+    }
 }
 

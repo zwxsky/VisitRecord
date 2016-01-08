@@ -1,6 +1,7 @@
 package visitRecord.activity;
 
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,9 +13,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
+import org.xutils.view.annotation.ViewInject;
 
 import java.util.List;
 
@@ -28,11 +32,17 @@ public class VisitDetailEditActivity extends BaseActivity {
 
     private List<User> ulist;
     private UserAdapter userAdapter;
+    @ViewInject(R.id.avatar1)
+    TextView avatar1;
+    @ViewInject(R.id.avatar2)
+    TextView avatar2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_visit_detail_edit);
+        avatar2.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -91,8 +101,11 @@ public class VisitDetailEditActivity extends BaseActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 //TODO 将人加入探访成员
+
+                                TextView textView = (TextView)findViewById(R.layout.avatar);
                                 LayoutInflater inflater = getLayoutInflater();
                                 inflater.inflate(R.layout.avatar,null);
+
                                 dialog.dismiss();
                             }
                         })

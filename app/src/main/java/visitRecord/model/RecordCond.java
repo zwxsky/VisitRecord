@@ -9,8 +9,8 @@ public class RecordCond {
 
     private Date fromTime;
     private Date toTime;
-    private Integer pageTo;
-    private Integer pageFrom;
+    private Integer start;
+    private Integer limit;
     /**0未领取;1已领取;2已探访;3已取消*/
     private Integer status;
     private Long uid;
@@ -31,22 +31,6 @@ public class RecordCond {
         this.toTime = toTime;
     }
 
-    public Integer getPageTo() {
-        return pageTo;
-    }
-
-    public void setPageTo(Integer pageTo) {
-        this.pageTo = pageTo;
-    }
-
-    public Integer getPageFrom() {
-        return pageFrom;
-    }
-
-    public void setPageFrom(Integer pageFrom) {
-        this.pageFrom = pageFrom;
-    }
-
     public Integer getStatus() {
         return status;
     }
@@ -61,5 +45,21 @@ public class RecordCond {
 
     public void setUid(Long uid) {
         this.uid = uid;
+    }
+
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public Integer getStart() {
+        return start;
+    }
+
+    public void setStart(Integer start) {
+        this.start = start;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 }

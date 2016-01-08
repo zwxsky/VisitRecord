@@ -24,14 +24,6 @@
     </LinearLayout>
     <!-- title-->
 
-    <!--<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:orientation="vertical">-->
-
-
-
     <!-- form-->
     <ScrollView
         android:layout_width="match_parent"
@@ -60,26 +52,11 @@
                     android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:editable="false"
                     android:text="刘海东"/>
             </LinearLayout>
 
-            <LinearLayout
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
 
-                    style="@style/label_title_vertical_small"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/date"/>
-                <EditText
-                    style="@style/label_vertical_content"
-                    android:id="@+id/gmtVisit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
 
             <!--<LinearLayout
                 android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -133,6 +110,24 @@
                 <EditText
                     android:id="@+id/addr"
                     style="@style/label_vertical_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+
+                    style="@style/label_title_vertical_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/date"/>
+                <EditText
+                    style="@style/label_vertical_content"
+                    android:id="@+id/gmtVisit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>

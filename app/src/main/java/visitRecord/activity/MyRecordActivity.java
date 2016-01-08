@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ import visitRecord.Base.BaseActivity;
 import visitRecord.model.Record;
 import visitRecord.model.RecordCond;
 import visitRecord.model.RecordModel;
+import visitRecord.util.DateUtil;
 import visitRecord.util.DateUtils;
 
 
@@ -33,8 +35,8 @@ import visitRecord.util.DateUtils;
 public class MyRecordActivity extends MineActivity implements View.OnClickListener, AdapterView.OnItemClickListener,AbsListView.OnScrollListener  {
 
     RecordCond cond = new RecordCond();
-    int pageFrom =0;
-    int pageTo =15;
+    int start =0;
+    int limit =15;
     int status= Record.STATUS_ACCEPTED;
     int scorllNum=0; //记录下拉次数
     @ViewInject(R.id.tvCurrentMonth)
@@ -43,12 +45,22 @@ public class MyRecordActivity extends MineActivity implements View.OnClickListen
     ListView listView;
     List<RecordModel> list = new ArrayList<RecordModel>();
     RecordAdapter adapter;
+    @ViewInject(R.id.visiting)
+    Button visiting;
+    @ViewInject(R.id.finished)
+    Button finished;
     Date date = new Date();
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        visiting.setOnClickListener(this);
+        finished.setOnClickListener(this);
+        date = DateUtils.getRelativeDate(date,Calendar.MONTH,0);
+        tvCurrentMonth.setText(DateUtils.dateToStr(date,"yyyy-MM"));
 
     }
 
@@ -80,8 +92,8 @@ public class MyRecordActivity extends MineActivity implements View.OnClickListen
         //TODO 根据日期查询
         cond.setFromTime(DateUtils.getFirstDayOfMonth(date));
         cond.setToTime(DateUtils.getLastDayOfMonth(date));
-        cond.setPageFrom(pageFrom);
-        cond.setPageTo(pageTo);
+        cond.setStart(start);
+        cond.setLimit(limit);
         adapter = new RecordAdapter(queryByCond(cond),this);
         listView.setAdapter(adapter);
 
@@ -97,8 +109,8 @@ public class MyRecordActivity extends MineActivity implements View.OnClickListen
         //TODO 根据日期查询
         cond.setFromTime(DateUtils.getFirstDayOfMonth(date));
         cond.setToTime(DateUtils.getLastDayOfMonth(date));
-        cond.setPageFrom(pageFrom);
-        cond.setPageTo(pageTo);
+        cond.setStart(start);
+        cond.setLimit(limit);
         adapter = new RecordAdapter(queryByCond(cond),this);
         listView.setAdapter(adapter);
     }
@@ -125,8 +137,8 @@ public class MyRecordActivity extends MineActivity implements View.OnClickListen
                 //TODO 查询对应的数据
                 cond.setFromTime(DateUtils.getFirstDayOfMonth(date));
                 cond.setToTime(DateUtils.getLastDayOfMonth(date));
-                cond.setPageFrom(pageFrom);
-                cond.setPageTo(pageTo);
+                cond.setStart(start);
+                cond.setLimit(limit);
                 adapter = new RecordAdapter(queryByCond(cond), this);
                 listView.setAdapter(adapter);
             }
@@ -136,8 +148,8 @@ public class MyRecordActivity extends MineActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         RecordCond cond = new RecordCond();
-        cond.setPageFrom(pageFrom);
-        cond.setPageTo(pageTo);
+        cond.setStart(start);
+        cond.setLimit(limit);
         cond.setFromTime(DateUtils.getFirstDayOfMonth(new Date()));
         cond.setToTime(DateUtils.getLastDayOfMonth(new Date()));
         cond.setUid(MineActivity.UID);
@@ -160,6 +172,7 @@ public class MyRecordActivity extends MineActivity implements View.OnClickListen
                 adapter = new RecordAdapter(queryByCond(cond),this);
                 listView.setAdapter(adapter);
                 listView.setOnItemClickListener(this);
+
                 findViewById(R.id.visiting_line).setBackgroundResource(R.color.gray);
                 findViewById(R.id.finished_line).setBackgroundResource(R.color.green);
                 break;

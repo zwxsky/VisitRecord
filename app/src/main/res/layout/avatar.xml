@@ -17,10 +17,12 @@
         android:id="@+id/avatar"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:padding="10dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="许"
         android:textSize="30dp"
         android:gravity="center"
+        android:visibility="gone"
         android:background="@drawable/cricle_avatar"
         android:layout_gravity="center" />
 
